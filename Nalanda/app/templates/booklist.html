@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<div class="list-container">
+    <table style="table-layout: fixed; width: 100%;">
+        <thead>
+            <tr>
+                <th>Register Number</th>
+                <th>Name</th> <!-- Fixed width with wrapping -->
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in dic_data.date %}
+            <tr>
+                <td id="tab1">{{i.id}}</td>
+                <td id="tab1" style="width: 250px; word-wrap: break-word;">{{i.name}}</td>
+                <td id="tab1">Booked</td>
+                <td><a href="{% url "delete" i.id %}" id="del" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h4>Total : {{dic_data.length}}</h4>
+</div>
+{% endblock %}
