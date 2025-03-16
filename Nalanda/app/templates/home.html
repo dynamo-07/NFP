@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div class="green-container">
+    <img src="{% static 'assets/img/logo.png' %}" alt="Nalanda Foundation Logo" height="250px">
+</div>
+
+<div class="container pb-4 pt-5">
+    <div class="card-columns">
+        {% if not data1 %}
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url "foodbook" %}"><img src="{% static 'assets/img/booking.png' %}" height="300px" width="390px" alt=""></a>
+                <br><h4>BOOKING</h4>
+            </div>
+        </div>
+        {% endif %}
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url 'booklist' %}"><img src="{% static 'assets/img/View.png' %}" height="300px" width="390px" alt=""></a>
+                <br><h4>LIST</h4>
+            </div>
+        </div>
+        {% if "Admin" in user.groups.all|join:"," %}
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url "feedbacklist" %}"><img src="{% static 'assets/img/feed.png' %}" height="300px" width="390px" alt=""></a>
+                <br><h4>FEEDBACK LIST</h4>        
+            </div>
+        </div>
+        {% else %}
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url "feedback" %}"><img src="{% static 'assets/img/feed.png' %}" height="300px" width="390px" alt=""></a>
+                <br><h4>FEEDBACK</h4>        
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<div class="help-container">
+    <h2 class="contact-us">FeedBack</h2>
+    <form id="contactForm" method="POST">
+        <!-- Name input-->
+         {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input class="form-control" id="name" name="name" type="text" value="{{user}}" readonly placeholder="Enter your name..."/>
+            <label for="name">Full name</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <!-- Message input-->
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="message" type="text" name="message" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+            <label for="message">Give feedback about food</label>
+        </div>
+        <button type="sybmit" class="btn btn-success">Send</button>
+    </form>
+</div>
+{% endblock %}

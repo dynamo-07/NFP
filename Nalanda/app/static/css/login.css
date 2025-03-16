@@ -1,0 +1,145 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #003366 0%, #00509e 100%);
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* Background gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-image: linear-gradient(135deg, #003366 0%, #00509e 100%);
+    }
+    50% {
+        background-image: linear-gradient(135deg, #00509e 0%, #003366 100%);
+    }
+    100% {
+        background-image: linear-gradient(135deg, #003366 0%, #00509e 100%);
+    }
+}
+
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-box {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(-20px);
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Slide-in effect */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    color: #003366;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+/* Input fields */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state for inputs with RGB border transition */
+input:focus {
+    outline: none;
+    border-color: rgb(0, 51, 102); /* Change border to RGB color */
+    box-shadow: 0 0 8px rgba(0, 51, 102, 0.5); /* Soft shadow effect for focus */
+}
+
+/* Button */
+.button-container {
+    margin-top: 20px;
+}
+
+.btn-login {
+    background-color: #003366;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #001f33;
+}
+
+/* Footer links */
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #003366;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00509e;
+}
